@@ -1,3 +1,4 @@
+https://skykip.github.io/pokemon_bigdata_blog/2023/01/10/git%E9%85%8D%E7%BD%AE/
 https://skykip.github.io/pokemon_bigdata_blog/tags/index.html
 https://skykip.github.io/pokemon_bigdata_blog/2023/01/09/welcome/
 https://skykip.github.io/pokemon_bigdata_blog/about/index.html
@@ -6,6 +7,7 @@ https://skykip.github.io/pokemon_bigdata_blog/2023/01/09/Wikitten%E4%B8%BB%E9%A2
 https://skykip.github.io/pokemon_bigdata_blog/2023/01/09/hello-world/
 https://skykip.github.io/pokemon_bigdata_blog
 https://skykip.github.io/pokemon_bigdata_blog/tags/hexo/
-https://skykip.github.io/pokemon_bigdata_blog/tags/%E4%B8%BB%E9%A2%98/
 https://skykip.github.io/pokemon_bigdata_blog/tags/%E6%90%AD%E5%BB%BA/
+https://skykip.github.io/pokemon_bigdata_blog/tags/git/
+https://skykip.github.io/pokemon_bigdata_blog/tags/%E4%B8%BB%E9%A2%98/
 https://skykip.github.io/pokemon_bigdata_blog/categories/%E5%B7%A5%E5%85%B7/

@@ -6,7 +6,7 @@
   <link href="https://skykip.github.io/pokemon_bigdata_blog/atom.xml" rel="self"/>
   
   <link href="https://skykip.github.io/pokemon_bigdata_blog/"/>
-  <updated>2023-01-07T13:12:35.662Z</updated>
+  <updated>2023-01-10T03:02:32.574Z</updated>
   <id>https://skykip.github.io/pokemon_bigdata_blog/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git 对于github与gitee基本配置</title>
+    <link href="https://skykip.github.io/pokemon_bigdata_blog/2023/01/10/git%E9%85%8D%E7%BD%AE/"/>
+    <id>https://skykip.github.io/pokemon_bigdata_blog/2023/01/10/git%E9%85%8D%E7%BD%AE/</id>
+    <published>2023-01-10T02:54:08.147Z</published>
+    <updated>2023-01-10T03:02:32.574Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="git基本配置"><a href="#git基本配置" class="headerlink" title="git基本配置"></a>git基本配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;username&quot;</span>    //（ <span class="string">&quot;username&quot;</span>是自己的账户名，）</span><br><span class="line">git config --global user.email <span class="string">&quot;username@email.com&quot;</span> </span><br><span class="line"></span><br><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;469307379@qq.com&quot;</span> -f <span class="string">&quot;id_rsa_github&quot;</span></span><br><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;469307379@qq.com&quot;</span> -f <span class="string">&quot;id_rsa_gitee&quot;</span></span><br><span class="line"></span><br><span class="line">ssh-agent bash</span><br><span class="line"></span><br><span class="line">ssh-add ~/.ssh/id_rsa_github</span><br><span class="line">ssh-add ~/.ssh/id_rsa_gitee</span><br><span class="line"></span><br><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa_gitee.pub </span><br><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa_github.pub</span><br></pre></td></tr></table></figure><h4 id="将公钥部署到github和gitee上"><a href="#将公钥部署到github和gitee上" class="headerlink" title="将公钥部署到github和gitee上"></a>将公钥部署到github和gitee上</h4><h4 id="然后尝试连接"><a href="#然后尝试连接" class="headerlink" title="然后尝试连接"></a>然后尝试连接</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@gitee.com</span><br><span class="line">ssh -T git@github.com </span><br></pre></td></tr></table></figure><hr><h3 id="假设开发了一个新项目，想推送到远程，具体的操作方式和命令如下："><a href="#假设开发了一个新项目，想推送到远程，具体的操作方式和命令如下：" class="headerlink" title="假设开发了一个新项目，想推送到远程，具体的操作方式和命令如下："></a>假设开发了一个新项目，想推送到远程，具体的操作方式和命令如下：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">（使用 git bash）</span><br><span class="line"></span><br><span class="line">1、切到项目目录中，例如 </span><br><span class="line"></span><br><span class="line">E:\httpRunner_study</span><br><span class="line">2、初始化git仓库并在本地提交</span><br><span class="line"></span><br><span class="line">//初始化git仓库 </span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line">//将当前目录下的文件添加到仓库（缓冲区）</span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line">//提交到本地仓库</span><br><span class="line">git commit -m <span class="string">&quot;init project&quot;</span></span><br><span class="line">3、把本地仓库和远程关联，并推送到远程</span><br><span class="line"></span><br><span class="line">//与远程仓库关联</span><br><span class="line">git remote add origin 远程仓库地址</span><br><span class="line"></span><br><span class="line">//例如: 关联一个远程库时必须给远程库指定一个名字，origin是默认习惯命名；</span><br><span class="line">git remote add origin git@server-name:path/repo-name.git</span><br><span class="line"></span><br><span class="line">//推送到远程仓库</span><br><span class="line">git push -u origin master</span><br><span class="line">执行以上操作就可以把本地新建的项目推送到 git 远程仓库了。</span><br><span class="line"></span><br><span class="line">但在实际操作中，最后一步推送命令会报错，提示需要先  git pull 更新，而如果执行 git pull 或者 git pull origin master 都无法成功执行，会有其他的报错。</span><br><span class="line"></span><br><span class="line">解决方案是，使用如下命令，强制推送到远程（可能会覆盖远程上已有分支、文件，使用前需要注意）</span><br><span class="line"></span><br><span class="line">//强制推送到远程（可能会覆盖远程上已有的分支或文件）</span><br><span class="line">git push -u origin master -f</span><br><span class="line">注意：仅第一次需要这样执行，后续在推送代码时，git push 命令不需要再加上 -u 或者 -f 命令，使用正常推送命令就行了。</span><br><span class="line"></span><br><span class="line">推送成功以后，就可以在本地项目中正常使用 git 命令进行更新、提交、推送等操作了。</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;git基本配置&quot;&gt;&lt;a href=&quot;#git基本配置&quot; class=&quot;headerlink&quot; title=&quot;git基本配置&quot;&gt;&lt;/a&gt;git基本配置&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;</summary>
+      
+    
+    
+    
+    <category term="工具" scheme="https://skykip.github.io/pokemon_bigdata_blog/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="hexo" scheme="https://skykip.github.io/pokemon_bigdata_blog/tags/hexo/"/>
+    
+    <category term="搭建" scheme="https://skykip.github.io/pokemon_bigdata_blog/tags/%E6%90%AD%E5%BB%BA/"/>
+    
+    <category term="git" scheme="https://skykip.github.io/pokemon_bigdata_blog/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>Wikitten主题-中文文档</title>
@@ -39,9 +67,9 @@
     
     <category term="hexo" scheme="https://skykip.github.io/pokemon_bigdata_blog/tags/hexo/"/>
     
-    <category term="主题" scheme="https://skykip.github.io/pokemon_bigdata_blog/tags/%E4%B8%BB%E9%A2%98/"/>
-    
     <category term="搭建" scheme="https://skykip.github.io/pokemon_bigdata_blog/tags/%E6%90%AD%E5%BB%BA/"/>
+    
+    <category term="主题" scheme="https://skykip.github.io/pokemon_bigdata_blog/tags/%E4%B8%BB%E9%A2%98/"/>
     
   </entry>
   
